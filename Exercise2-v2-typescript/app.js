@@ -1,0 +1,12 @@
+"use strict";
+exports.__esModule = true;
+var LoanAccount_1 = require("./LoanAccount");
+var OverdraftAccount_1 = require("./OverdraftAccount");
+var loanAccount = new LoanAccount_1["default"](1234, "Henrik", "Høltzer");
+loanAccount.deposit(500);
+console.log(loanAccount.getBalance());
+var overdraftAccount = new OverdraftAccount_1["default"](1234, "Peter", "Sommer", 10000);
+overdraftAccount.deposit(1000);
+console.log(overdraftAccount.getBalance());
+overdraftAccount.withdraw(20000);
+console.log(overdraftAccount.getBalance());
