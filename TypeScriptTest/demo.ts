@@ -1,14 +1,8 @@
 
-function process (x){
-    x.name = "foo";
-    var v = x+x;
-    alert(v);
-}
 
 
-function process1 (x : string[]){
-    x[0]
-}
+
+
 
 
 interface Thing {
@@ -60,3 +54,4 @@ var acc1 = makeAccumulator1();
 console.log(acc1.result());
 acc1.add(5);
 console.log(acc1.result());
+
