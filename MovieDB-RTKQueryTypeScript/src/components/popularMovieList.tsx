@@ -1,13 +1,16 @@
 import React from "react";
 import { useFetchPopularMoviesQuery } from "../store";
 import MovieCard from "./movieCard";
-import { Movie } from "../types/movie";
+//import { Movie } from "../types/movie";
+import { store } from "../store";
 
 
 function PopularMoviesList() {                                     //Bemærk Query-function kaldes automatisk nå komponenten bliver displayed
   const {data, error, isFetching } = useFetchPopularMoviesQuery(); //kaldet vil straks hente data i et result-objekt, som vi "destructure" til data, error og isLoading
                                                                    //Bemærk Mutation-function returnere et array med en function, som kan kaldes når data skal ændres
-  //console.log(data, error, isFetching);                          //samt et objekt results der er meget tilsvarende det der returneres fra et Query-function kald
+  //console.log(data, error, isFetching);  
+  console.log(store.getState());
+  //                         //samt et objekt results der er meget tilsvarende det der returneres fra et Query-function kald
                                                                    //til start er results objektet "uinitialiseret", efter kald af funktionen vil det indeholde mange flere properties
                                                                    //med relevante værdier fx data, isSucces/isError mm 
 let content;

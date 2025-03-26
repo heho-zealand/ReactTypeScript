@@ -1,3 +1,4 @@
+import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import PopularMoviesList from "./components/popularMovieList";
 import HighestRatedMovieList from "./components/highestRatedMovieList"

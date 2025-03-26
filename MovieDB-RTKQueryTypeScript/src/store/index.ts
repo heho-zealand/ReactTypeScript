@@ -6,7 +6,7 @@ import { searchMovieReducer, changeSearchTerm } from './searchMovieSlice';
 
 export const store = configureStore({
   reducer: {
-    [moviesApi.reducerPath]: moviesApi.reducer, //dette er en mere sikker måde, ungår "typo's"
+    [moviesApi.reducerPath]: moviesApi.reducer, //'movies' - dette er en mere sikker måde, ungår "typo's"
     searchMovie: searchMovieReducer
   },
   middleware: (getDefaultMiddleware) => {  //Thunk middelware er default når der benyttes Redux Toolkit configureStore.
@@ -22,4 +22,6 @@ setupListeners(store.dispatch);
 
 export { useFetchPopularMoviesQuery, useFetchHighestRatedMoviesQuery, useFetchSearchMovieQuery } from './apis/moviesApi';
 export {changeSearchTerm};
+export type RootState = ReturnType<typeof store.getState>
+
 
