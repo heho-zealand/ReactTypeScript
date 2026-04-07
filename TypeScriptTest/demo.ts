@@ -1,38 +1,59 @@
 
+function process(x : {name: number}){
+    x.name = "foo";
+    var v = x.name+x
+    alert(v);
+}
 
 
 
 
+
+function process1a(x : string[]){
+   x[0]
+}
+
+function process1b(x : () => string){
+   x()
+}
+
+
+function process1c(x : {a:number, b:string}){
+   x
+}
 
 
 interface Thing {
     a: number;
     b: string;
-    //foo(s:string):string
+    c? : boolean;
+    foo(s:string) : string;
+    foo(n:number):number;
+    //foo(s:string, n:number):string;
 }
 
 
 function process2(x : Thing) {
-    return x  
+    return x.a;  
 }
 
-var n = process2({a: 10, b: "hello"});
+var n = process2({a: 10, b: "hello"});  //typeinference type flows
 
+//process2({a: 10, b: "hello", c: true});
+//process2({a: 10, b: "hello", c: 5});
 
 
 
 function makeAccumulator(){
-    var sum = 0;
+    var sum : any;
     return {
         clear : () => {sum = 0},
-        add : (value : number) => {sum += value},
+        add : (value : any) => {sum += value},
         result : () => sum
     }
 }
 
 var acc = makeAccumulator();
-acc;
-
 
 
 interface Accumulator {

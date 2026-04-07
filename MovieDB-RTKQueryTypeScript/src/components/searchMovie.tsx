@@ -11,11 +11,11 @@ function SearchMovie() {
     return state.searchMovie.searchTerm;
   });
 
-  const handleSearchTermChange = (event) => {
+  const handleSearchTermChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(changeSearchTerm(event.target.value));
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
                  //dette for at undgå at Browseren automatisk prøver et udføre et submit  
                  //dispatch(changeSearchTerm(searchTerm));
                  event.preventDefault(); 

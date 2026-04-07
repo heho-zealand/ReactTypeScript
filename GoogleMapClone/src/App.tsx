@@ -4,7 +4,7 @@ import Map from "./components/Map";
 import LocationSearch from "./components/LocationSearch";
 
 function App() {
-  const [place, setPlace] = useState<Place | null>(null);  //Bemærk vigtigt at annoerere med <Place | null> elles vil typescript kun acceptere null pga generic type inference
+  const [place, setPlace] = useState<Place | null>(null);  //Bemærk vigtigt at annotere med <Place | null> elles vil typescript kun acceptere null pga generic type inference
 
   return (
     <div className="h-screen w-screen grid grid-cols-12">

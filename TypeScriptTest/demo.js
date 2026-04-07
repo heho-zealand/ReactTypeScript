@@ -1,17 +1,33 @@
-function process2(x) {
-    return x;
+"use strict";
+function process(x) {
+    x.name = "foo";
+    var v = x.name + x;
+    alert(v);
 }
-var n = process2({ a: 10, b: "hello" });
+function process1a(x) {
+    x[0];
+}
+function process1b(x) {
+    x();
+}
+function process1c(x) {
+    x;
+}
+function process2(x) {
+    return x.a;
+}
+var n = process2({ a: 10, b: "hello" }); //typeinference type flows
+//process2({a: 10, b: "hello", c: true});
+//process2({a: 10, b: "hello", c: 5});
 function makeAccumulator() {
-    var sum = 0;
+    var sum;
     return {
-        clear: function () { sum = 0; },
-        add: function (value) { sum += value; },
-        result: function () { return sum; }
+        clear: () => { sum = 0; },
+        add: (value) => { sum += value; },
+        result: () => sum
     };
 }
 var acc = makeAccumulator();
-acc;
 function makeAccumulator1() {
     var sum = 0;
     return {

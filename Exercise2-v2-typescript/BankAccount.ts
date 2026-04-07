@@ -18,8 +18,8 @@ abstract class BankAccount implements IBankAccount {
         this.balance = 0;
     }
 
-    abstract addInterest();
-    abstract addInterest(fee : number);
+    abstract addInterest() : void;
+    abstract addInterest(fee : number) : void;
     deposit(amount: number) { this.balance += amount; };
     withdraw(amount: number) { this.balance -= amount; };
     getBalance(): number { return this.balance; };

@@ -1,5 +1,6 @@
 import React from 'react';
-function MovieCard({movie}){
+import { Movie } from '../types/movie';
+function MovieCard({movie} : {movie: Movie}) {
 
     const posterBasePath = 'https://image.tmdb.org/t/p/w185_and_h278_bestv2';
     return (
